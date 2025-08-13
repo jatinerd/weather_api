@@ -62,8 +62,8 @@ app.post("/", (req, res) => {
       res.write(`<h1>Current weather in ${city}:  ${weatherDescription}</h1>`);
       res.write(`<h1>\nTemperature:  ${temperature}°C\n</h1>`);
       res.write(`<img src="${imageURL}">`);
-      res.send();
-      console.log("Weather data sent to client.");
+      res.sendFile(__dirname + "/showdata.html");
+      console.log("Weather data sent to the client.");
     });
     response.on("end", () => {});
   });
